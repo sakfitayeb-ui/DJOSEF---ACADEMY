@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJOSEF ACADMY - أكاديمية جوزيف</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --facebook-color: #3b5998;
+            --instagram-color: #e1306c;
+            --whatsapp-color: #25D366;
+            --location-color: #FF5722;
+            --ai-color: #9b59b6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .header-buttons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            background-color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+        }
+        
+        .contact-info:hover {
+            transform: scale(1.05);
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-left: 8px;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+        
+        .hamburger span {
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            border-radius: 5px;
+            transition: all 0.3s linear;
+            position: relative;
+            transform-origin: center;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80') center/cover no-repeat;
+            padding: 7rem 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+            margin: 0.5rem;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.5);
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 0 0.5rem;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .facebook-btn {
+            background-color: var(--facebook-color);
+            border: 2px solid var(--facebook-color);
+        }
+        
+        .instagram-btn {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            border: 2px solid #dc2743;
+        }
+        
+        .location-btn {
+            background-color: var(--location-color);
+            border: 2px solid var(--location-color);
+        }
+        
+        .whatsapp-btn {
+            background-color: var(--whatsapp-color);
+            border: 2px solid var(--whatsapp-color);
+        }
+        
+        .ai-btn {
+            background-color: var(--ai-color);
+            border: 2px solid var(--ai-color);
+        }
+        
+        .social-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .social-btn i {
+            margin-left: 8px;
+            font-size: 1.2rem;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--secondary-color);
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: #777;
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+            font-size: 1.1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid #eee;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+            transition: width 0.3s;
+        }
+        
+        .feature-card:hover::before {
+            width: 100%;
+            opacity: 0.05;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card i {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .feature-card:hover i {
+            color: var(--accent-color);
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* Courses Section */
+        .courses {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+        }
+        
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .course-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .course-img {
+            height: 220px;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .course-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+        }
+        
+        .course-content {
+            padding: 2rem;
+        }
+        
+        .course-content h3 {
+            margin-bottom: 0.8rem;
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+        }
+        
+        .course-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            z-index: -1;
+            opacity: 0.03;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card i {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 2rem;
+            font-style: italic;
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-left: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .author-info h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.3rem;
+        }
+        
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* AI Assistant Section */
+        .ai-assistant {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+        }
+        
+        .ai-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .ai-info {
+            padding: 2rem;
+        }
+        
+        .ai-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .ai-info p {
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .ai-chat {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chat-header {
+            background: linear-gradient(135deg, var(--ai-color), #8e44ad);
+            color: white;
+            padding: 1.2rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 0.8rem 1.2rem;
+            border-radius: 18px;
+            line-height: 1.5;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .bot-message {
+            background-color: #f1f2f6;
+            align-self: flex-start;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .user-message {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            align-self: flex-end;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 1rem;
+            border-top: 1px solid #eee;
+            background-color: #f9f9f9;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 0.8rem 1.2rem;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .chat-input button {
+            background: linear-gradient(135deg, var(--ai-color), #8e44ad);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 0.8rem 1.5rem;
+            margin-right: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .chat-input button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Location Section */
+        .location {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .location-info {
+            padding: 2rem;
+        }
+        
+        .location-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .location-info p {
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .location-info i {
+            color: var(--primary-color);
+            margin-left: 0.5rem;
+        }
+        
+        .location-map {
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Social Media Section */
+        .social-media {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-8px) scale(1.1);
+            background-color: var(--accent-color);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background-color: #f5f5f5;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .contact-info-card {
+            background-color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+          o  text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info-card i {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .contact-info-card h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+        }
+        
+        .contact-info-card a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info-card a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
+            color: white;
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-social {
+            margin: 2rem 0;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.7);
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.5);
+            transition: all 0.3s;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: var(--primary-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .ai-container, .location-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .location-map, .ai-chat {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                width: 100%;
+                margin-top: 1rem;
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .hamburger {
+                display: flex;
+                position: absolute;
+                top: 1.5rem;
+                left: 1.5rem;
+            }
+            
+            .header-buttons {
+                margin-top: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .social-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-btn {
+                margin: 0.5rem 0;
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 5rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .feature-card, .testimonial-card, .contact-info-card {
+                padding: 1.5rem;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .message {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-content">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>DJOSEF ACADMY</span>
+            </div>
+            
+            <nav id="nav">
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#features">المميزات</a></li>
+                    <li><a href="#courses">الدورات</a></li>
+                    <li><a href="#ai-assistant">المساعد الافتراضي</a></li>
+                    <li><a href="#testimonials">آراء العملاء</a></li>
+                    <li><a href="#location">الموقع</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-buttons">
+                <div class="contact-info">
+                    <a href="tel:0660969453">
+                        <i class="fas fa-phone"></i>
+                        0660969453
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>أكاديمية DJOSEF للتعليم والتدريب</h1>
+            <p>نقدم دورات تعليمية متميزة ودروس دعم في مختلف المجالات لتطوير مهاراتك وتحقيق أهدافك التعليمية والمهنية</p>
+            
+            <div class="social-buttons">
+                <a href="https://www.facebook.com/share/1757aR6qMQ/" target="_blank" class="social-btn facebook-btn">
+                    <i class="fab fa-facebook-f"></i>
+                    تابعنا على الفيسبوك
+                </a>
+                <a href="https://instagram.com/DJOSEFACADMY" target="_blank" class="social-btn instagram-btn">
+                    <i class="fab fa-instagram"></i>
+                    تابعنا على إنستغرام
+                </a>
+                <a href="https://maps.app.goo.gl/e368T2kCxnomrQf79" target="_blank" class="social-btn location-btn">
+                    <i class="fas fa-map-marker-alt"></i>
+                    موقع الأكاديمية
+                </a>
+                <a href="#ai-assistant" class="social-btn ai-btn">
+                    <i class="fas fa-robot"></i>
+                    اسأل المساعد
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>مميزات أكاديميتنا</h2>
+                <p>نقدم لكم مجموعة من المميزات والخدمات التي تجعلنا الخيار الأمثل لتحقيق أهدافكم التعليمية</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>دروس الدعم المدرسي</h3>
+                    <p>دروس دعم لجميع المستويات والمواد الدراسية مع أفضل الأساتذة المتخصصين في تبسة</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>دورات تدريبية متخصصة</h3>
+                    <p>دورات في مختلف المجالات الأكاديمية واللغوية والمهنية لتطوير مهاراتك</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>مدربون محترفون</h3>
+                    <p>فريق من المدربين المؤهلين ذوي الخبرة والكفاءة في مجالاتهم</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>شهادات معتمدة</h3>
+                    <p>منح شهادات معتمدة بعد إتمام الدورات بنجاح</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>مواد تعليمية شاملة</h3>
+                    <p>توفير جميع المواد والمراجع التعليمية اللازمة للطلاب</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>دعم مستمر</h3>
+                    <p>دعم ومساعدة مستمرة للطلاب حتى بعد انتهاء الدورات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>دوراتنا التعليمية</h2>
+                <p>اكتشف مجموعة الدورات المتميزة التي نقدمها في مختلف المجالات</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1560785496-3c9d27877182?auto=format&fit=crop&q=80');"></div>
+                    <div class="course-content">
+                        <h3>دروس الدعم المدرسي</h3>
+                        <p>دروس دعم لجميع المواد والمستويات الدراسية بمختلف الشعب العلمية والأدبية</p>
+                        <a href="#contact" class="btn">اطلب المزيد</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80');"></div>
+                    <div class="course-content">
+                        <h3>دورات اللغات</h3>
+                        <p>دورات تعلم اللغات الأجنبية مع متخصصين (الإنجليزية، الفرنسية، الألمانية)</p>
+                        <a href="#contact" class="btn">اطلب المزيد</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80');"></div>
+                    <div class="course-content">
+                        <h3>دورات التقوية</h3>
+                        <p>دورات مكثفة لتحسين المستوى الدراسي والتحضير للامتحانات الرسمية</p>
+                        <a href="#contact" class="btn">اطلب المزيد</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant Section -->
+    <section class="ai-assistant" id="ai-assistant">
+        <div class="container">
+            <div class="section-title">
+                <h2>مساعد الأكاديمية الافتراضي</h2>
+                <p>اسأل أي سؤال حول الأكاديمية، دوراتنا، أسعارنا، أو أي استفسار آخر</p>
+            </div>
+            
+            <div class="ai-container">
+                <div class="ai-info">
+                    <h3>كيف يمكنني مساعدتك اليوم؟</h3>
+                    <p>مرحباً بك! أنا مساعد الأكاديمية الافتراضي، وأنا هنا للإجابة على جميع استفساراتك حول أكاديمية DJOSEF. يمكنك سؤالي عن:</p>
+                    <ul style="list-style-type: none; margin: 1.5rem 0; padding: 0;">
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle" style="color: var(--ai-color); margin-left: 0.5rem;"></i> معلومات عن الدورات والبرامج التعليمية</li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle" style="color: var(--ai-color); margin-left: 0.5rem;"></i> أسعار الدورات ومواعيدها</li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle" style="color: var(--ai-color); margin-left: 0.5rem;"></i> موقع الأكاديمية وأوقات العمل</li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle" style="color: var(--ai-color); margin-left: 0.5rem;"></i> طرق التواصل مع الإدارة</li>
+                        <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle" style="color: var(--ai-color); margin-left: 0.5rem;"></i> أي استفسار آخر لديك</li>
+                    </ul>
+                    <p>لا تتردد في سؤالي أي شيء، وسأبذل قصارى جهدي لمساعدتك!</p>
+                    
+                    <div class="social-buttons" style="justify-content: flex-start; margin-top: 2rem;">
+                        <a href="#ai-chat" class="social-btn ai-btn">
+                            <i class="fas fa-comments"></i>
+                            ابدأ المحادثة الآن
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="ai-chat">
+                    <div class="chat-header">
+                        <i class="fas fa-robot"></i> مساعد أكاديمية DJOSEF
+                    </div>
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message bot-message">
+                            مرحباً! أنا مساعد الأكاديمية الافتراضي. كيف يمكنني مساعدتك اليوم؟
+                        </div>
+                        <div class="message bot-message">
+                            يمكنك سؤالي عن أي شيء يتعلق بالأكاديمية، الدورات، الأسعار، المواعيد، أو أي استفسار آخر.
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="user-input" placeholder="اكتب سؤالك هنا...">
+                        <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>آراء عملائنا</h2>
+                <p>ما يقوله طلابنا عن تجربتهم مع أكاديمية DJOSEF</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="testimonial-text">تجربة رائعة مع أكاديمية DJOSEF، الأساتذة محترفون والنتائج ممتازة. تحسنت درجات ابني بشكل ملحوظ بعد الالتحاق بدروس الدعم.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">أ</div>
+                        <div class="author-info">
+                            <h4>أحمد السعيد</h4>
+                            <p>ولي أمر طالب</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="testimonial-text">دورات اللغة الإنجليزية التي قدمتها الأكاديمية ساعدتني كثيرًا في تطوير مستواي والحصول على ترقية في عملي.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ف</div>
+                        <div class="author-info">
+                            <h4>فاطمة الزهراء</h4>
+                            <p>موظفة</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="testimonial-text">المنهجية المتبعة في التدريس رائعة، والاهتمام الفردي بكل طالب يجعل عملية التعلم أكثر فعالية وسهولة.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">م</div>
+                        <div class="author-info">
+                            <h4>محمد أمين</h4>
+                            <p>طالب</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+        <div class="container">
+            <div class="section-title">
+                <h2>موقع الأكاديمية</h2>
+                <p>يمكنكم زيارة الأكاديمية في العنوان التالي</p>
+            </div>
+            
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>عنوان الأكاديمية</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> تبسة، حي بيالاف، الأكاديمية</p>
+                    <p><i class="fas fa-clock"></i> أوقات العمل: من السبت إلى الخميس، من 8:00 صباحاً إلى 8:00 مساءً</p>
+                    <p><i class="fas fa-phone"></i> الهاتف: 0660969453</p>
+                    
+                    <div class="social-buttons" style="justify-content: flex-start; margin-top: 2rem;">
+                        <a href="https://maps.app.goo.gl/e368T2kCxnomrQf79" target="_blank" class="social-btn location-btn">
+                            <i class="fas fa-directions"></i>
+                            اذهب إلى الموقع
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10202.519049730853!2d0.4545413979479366!3d36.24225127177301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f311fe7aae5b5d%3A0x6a6f3d402fce8430!2sTebessa!5e0!3m2!1sen!2sdz!4v1652108128393!5m2!1sen!2sdz" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media">
+        <div class="container">
+            <div class="section-title">
+                <h2>تابعنا على وسائل التواصل الاجتماعي</h2>
+                <p>ابق على اطلاع بآخر أخبار الأكاديمية والدورات الجديدة من خلال متابعة صفحاتنا</p>
+            </div>
+            
+            <div class="social-buttons">
+                <a href="https://www.facebook.com/share/1757aR6qMQ/" target="_blank" class="social-btn facebook-btn">
+                    <i class="fab fa-facebook-f"></i>
+                    تابعنا على الفيسبوك
+                </a>
+                <a href="https://instagram.com/DJOSEFACADMY" target="_blank" class="social-btn instagram-btn">
+                    <i class="fab fa-instagram"></i>
+                    تابعنا على إنستغرام
+                </a>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/1757aR6qMQ/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/DJOSEFACADMY" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://maps.app.goo.gl/e368T2kCxnomrQf79" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=213660969453" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>اتصل بنا</h2>
+                <p>نحن هنا للإجابة على جميع استفساراتك وتلقي طلباتك</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>اتصل بنا</h3>
+                    <a href="tel:0660969453">0660969453</a>
+                </div>
+                <div class="contact-info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>البريد الإلكتروني</h3>
+                    <a href="mailto:info@djosefacadmy.com">غير متوفر </a>
+                </div>
+                <div class="contact-info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>زيارتنا</h3>
+                    <p>تبسة، حي بيالاف، الأكاديمية</p>
+                    <a href="https://maps.app.goo.gl/e368T2kCxnomrQf79" target="_blank">عرض على الخريطة</a>
+                </div>
+            </div>
+            
+            <div class="social-buttons" style="margin-top: 3rem;">
+                <a href="https://www.facebook.com/share/1757aR6qMQ/" target="_blank" class="social-btn facebook-btn">
+                    <i class="fab fa-facebook-f"></i>
+                    تابعنا على الفيسبook
+                </a>
+                <a href="https://instagram.com/DJOSEFACADMY" target="_blank" class="social-btn instagram-btn">
+                    <i class="fab fa-instagram"></i>
+                    تابعنا على إنستغرام
+                </a>
+                <a href="https://maps.app.goo.gl/e368T2kCxnomrQf79" target="_blank" class="social-btn location-btn">
+                    <i class="fas fa-map-marker-alt"></i>
+                    موقع الأكاديمية
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=213660969453" target="_blank" class="social-btn whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    تواصل على واتساب
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>DJOSEF ACADMY</span>
+            </div>
+            <div class="footer-links">
+                <a href="#home">الرئيسية</a>
+                <a href="#features">المميزات</a>
+                <a href="#courses">الدورات</a>
+                <a href="#ai-assistant">المساعد الافتراضي</a>
+                <a href="#testimonials">آراء العملاء</a>
+                <a href="#location">الموقع</a>
+                <a href="#contact">اتصل بنا</a>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://www.facebook.com/share/1757aR6qMQ/" target="_blank" class="social-btn facebook-btn">
+                    <i class="fab fa-facebook-f"></i>
+                    الفيسبوك
+                </a>
+                <a href="https://instagram.com/DJOSEFACADMY" target="_blank" class="social-btn instagram-btn">
+                    <i class="fab fa-instagram"></i>
+                    إنستغرام
+                </a>
+                <a href="https://maps.app.goo.gl/e368T2kCxnomrQf79" target="_blank" class="social-btn location-btn">
+                    <i class="fas fa-map-marker-alt"></i>
+                    الموقع
+                </a>
+            </div>
+            
+            <p class="copyright">جميع الحقوق محفوظة © 2025 أكاديمية DJOSEF - تبسة، حي بيالاف</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // وظيفة للاتصال التلقائي عند النقر على رقم الهاتف
+        document.addEventListener('DOMContentLoaded', function() {
+            const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+            
+            phoneLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth > 768) {
+                        e.preventDefault();
+                        const phoneNumber = this.getAttribute('href').replace('tel:', '');
+                        alert(`سيتم الاتصال بالرقم: ${phoneNumber}\nفي تطبيق حقيقي، سيفتح تطبيق الهاتف مع هذا الرقم`);
+                    }
+                });
+            });
+            
+            // تأثيرات scroll للروابط
+            document.querySelectorAll('nav a, .footer-links a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // إغلاق القائمة على الهاتف بعد النقر على رابط
+                    if (window.innerWidth <= 768) {
+                        document.getElementById('nav').classList.remove('active');
+                        document.getElementById('hamburger').classList.remove('active');
+                    }
+                });
+            });
+            
+            // زر العودة للأعلى
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                    document.getElementById('header').classList.add('scrolled');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                    document.getElementById('header').classList.remove('scrolled');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // قائمة الهاتف
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('nav');
+            
+            hamburger.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+            
+            // مساعد الذكاء الاصطناعي
+            const chatMessages = document.getElementById('chat-messages');
+            const userInput = document.getElementById('user-input');
+            const sendBtn = document.getElementById('send-btn');
+            
+            // قاعدة المعرفة للأسئلة الشائعة
+            const knowledgeBase = {
+                'مرحبا': 'مرحباً! كيف يمكنني مساعدتك اليوم؟',
+                'اهلا': 'أهلاً وسهلاً! كيف يمكنني مساعدتك في استفساراتك حول الأكاديمية؟',
+                'الدورات': 'نقدم في أكاديمية DJOSEF العديد من الدورات منها: دروس الدعم المدرسي، دورات اللغات (الإنجليزية، الفرنسية، الألمانية)، ودورات التقوية المكثفة. هل تريد معرفة المزيد عن دورات محددة؟',
+                'الأسعار': 'أسعار الدورات تختلف حسب نوع الدورة ومدتها. للتفاصيل الدقيقة يرجى الاتصال بنا على الرقم 0660969453 وسنزودك بكافة المعلومات عن الأسعار والخصومات المتاحة.',
+                'الموقع': 'أكاديمية DJOSEF تقع في تبسة، حي بيالاف. يمكنك استخدام خرائط Google للوصول إلينا بسهولة.',
+                'المواعيد': 'أوقات العمل في الأكاديمية من السبت إلى الخميس، من 8:00 صباحاً إلى 8:00 مساءً. الدروس تكون وفق جدول زمني يتم الاتفاق عليه مع الطلاب.',
+                'التسجيل': 'للتسجيل في أي من دوراتنا، يمكنك الاتصال بنا على الرقم 0660969453 أو زيارة الأكاديمية في تبسة، حي بيالاف خلال أوقات العمل.',
+                'المدرسين': 'فريق التدريس في الأكاديمية consists of experienced and qualified teachers specialized in their fields. جميع المدرسين مؤهلين وذوي خبرة في مجالات تخصصهم.',
+                'شهادة': 'نعم، نقدم شهادات معتمدة بعد إتمام الدورات بنجاح. الشهادات معترف بها محلياً.',
+                'اللغات': 'نقدم دورات في اللغة الإنجليزية، الفرنسية، والألمانية. لدينا مستويات مختلفة تناسب المبتدئين والمتقدمين.'
+            };
+            
+            // إرسال رسالة عند الضغط على الزر
+            sendBtn.addEventListener('click', sendMessage);
+            
+            // إرسال رسالة عند الضغط على Enter
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+                
+                // إضافة رسالة المستخدم
+                addMessage(message, 'user');
+                userInput.value = '';
+                
+                // محاكاة typing effect
+                setTimeout(() => {
+                    // البحث عن إجابة من قاعدة المعرفة
+                    let response = 'عذراً، لم أفهم سؤالك بشكل كامل. يمكنك الاتصال بنا على الرقم 0660969453 للحصول على مساعدة مباشرة.';
+                    
+                    for (const keyword in knowledgeBase) {
+                        if (message.includes(keyword)) {
+                            response = knowledgeBase[keyword];
+                            break;
+                        }
+                    }
+                    
+                    // إضافة رد المساعد
+                    addMessage(response, 'bot');
+                }, 1000);
+            }
+            
+            function addMessage(text, sender) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+                messageElement.textContent = text;
+                
+                chatMessages.appendChild(messageElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // تأثيرات للعناصر عند التمرير
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.feature-card, .course-card, .testimonial-card, .contact-info-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = 1;
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // تهيئة العناصر
+            const initAnimateElements = () => {
+                const elements = document.querySelectorAll('.feature-card, .course-card, .testimonial-card, .contact-info-card');
+                
+                elements.forEach(element => {
+                    element.style.opacity = 0;
+                    element.style.transform = 'translateY(50px)';
+                    element.style.transition = 'all 0.8s ease';
+                });
+                
+                window.addEventListener('scroll', animateOnScroll);
+                // تشغيل مرة أولى عند التحميل
+                animateOnScroll();
+            };
+            
+            initAnimateElements();
+        });
+    </script>
+</body>
+</html>
